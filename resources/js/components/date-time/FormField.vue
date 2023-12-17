@@ -21,9 +21,7 @@
             :first-day-of-week="firstDayOfWeek"
             :class="[errorClasses, inputClasses]"
             @change="handleChange"
-            :disabled="isReadonly"
         />
-
         <span v-if="!field.hideTimezone" class="text-80 text-sm ml-2">({{ userTimezone }})</span>
       </div>
 
@@ -65,6 +63,8 @@ export default {
       // into the user's local time to display in the field
       if (this.value !== '') {
         this.localizedValue = this.fromAppTimezone(this.value)
+      } else {
+         this.localizedValue = '';
       }
     },
 
