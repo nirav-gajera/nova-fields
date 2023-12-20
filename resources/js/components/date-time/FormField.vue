@@ -25,8 +25,7 @@
         <span v-if="!field.hideTimezone" class="text-80 text-sm ml-2">({{ userTimezone }})</span>
       </div>
 
-      <p
-          v-if="hasError"
+      <p     v-if="hasError"
           class="my-2 text-danger"
       >
         {{ firstError }}
@@ -52,9 +51,6 @@ export default {
   data: () => ({ localizedValue: '' }),
 
   methods: {
-    /*
-     * Set the initial value for the field
-     */
     setInitialValue() {
       // Set the initial value of the field
       this.value = this.field.value || ''
